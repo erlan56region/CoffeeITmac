@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Версии macOS по годам: от System 1.0 (1984) до macOS Sequoia (2024)</title>
+<meta name="description" content="История macOS по годам: System 1.0 (1984), System 6–7, Mac OS 8–9, Mac OS X Cheetah–Snow Leopard, OS X Lion–Mavericks, macOS Yosemite–Sequoia (2024). Со скриншотами каждой версии.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Версии macOS по годам: от System 1.0 (1984) до macOS Sequoia (2024)">
+<meta property="og:description" content="Весь путь операционной системы Apple — со скриншотами каждой эпохи.">
+<meta property="og:locale" content="ru_RU">
+<meta name="theme-color" content="#1d1d1f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231d1d1f'/%3E%3Ccircle cx='50' cy='50' r='26' fill='%230071e3'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#f5f5f7; --card:#ffffff; --text:#1d1d1f; --muted:#6e6e73;
+    --accent:#0071e3; --line:#e8e8ed; --code:#f0f0f2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+       background:var(--bg);color:var(--text);line-height:1.65;}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  header.hero{
+    background:linear-gradient(160deg,#1d1d1f 0%,#2c2c2e 55%,#0071e3 130%);
+    color:#fff;text-align:center;padding:90px 24px 70px;
+  }
+  header.hero .kicker{letter-spacing:.25em;text-transform:uppercase;font-size:13px;color:#a1a1a6;margin-bottom:18px;}
+  header.hero h1{font-size:clamp(30px,5vw,52px);font-weight:700;line-height:1.15;max-width:900px;margin:0 auto 18px;}
+  header.hero p.sub{max-width:680px;margin:0 auto;color:#d6d6d8;font-size:17px;}
+  header.hero .meta{margin-top:26px;font-size:14px;color:#a1a1a6;}
+  header.hero .meta a{color:#fff;}
+
+  nav.toc{
+    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);
+    backdrop-filter:saturate(180%) blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.toc ul{display:flex;gap:4px;list-style:none;overflow-x:auto;padding:10px 20px;max-width:1100px;margin:0 auto;}
+  nav.toc a{display:block;white-space:nowrap;padding:6px 12px;border-radius:20px;color:var(--muted);font-size:13px;font-weight:500;}
+  nav.toc a:hover{background:var(--code);color:var(--text);text-decoration:none;}
+
+  main{max-width:820px;margin:0 auto;padding:40px 20px 80px;}
+  .lead{font-size:19px;background:var(--card);border:1px solid var(--line);
+        border-radius:16px;padding:28px 30px;margin-bottom:40px;box-shadow:0 2px 10px rgba(0,0,0,.03);}
+  .lead strong{color:var(--accent);}
+
+  section.version{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:30px 32px;margin-bottom:26px;box-shadow:0 2px 10px rgba(0,0,0,.03);
+    scroll-margin-top:80px;
+  }
+  section.version h2{font-size:24px;font-weight:700;margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;}
+  .year{font-size:13px;font-weight:600;color:#fff;background:var(--accent);padding:3px 12px;border-radius:20px;letter-spacing:.03em;}
+  .codename{font-size:14px;color:var(--muted);font-weight:500;}
+  section.version p{margin-top:12px;color:#333;font-size:16px;}
+  section.version ul{margin:12px 0 0 22px;color:#333;}
+  section.version li{margin-bottom:6px;}
+
+  /* ---------- SLIDER ---------- */
+  .slider{position:relative;margin-top:20px;border-radius:12px;overflow:hidden;
+          border:1px solid var(--line);background:#0b0b0d;box-shadow:0 6px 24px rgba(0,0,0,.10);}
+  .slider .track{display:flex;transition:transform .8s cubic-bezier(.65,.05,.36,1);will-change:transform;}
+  .slider .slide{flex:0 0 100%;position:relative;}
+  .slider .slide img{width:100%;display:block;max-height:440px;object-fit:cover;}
+  .slider .slide img.light{background:#fff;object-fit:contain;}
+  .slider .slide figcaption{
+    position:absolute;left:0;right:0;bottom:0;padding:22px 16px 10px;
+    font-size:13px;color:#fff;text-align:center;
+    background:linear-gradient(transparent,rgba(0,0,0,.65));
+  }
+  .slider button.arrow{
+    position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+    width:38px;height:38px;border:none;border-radius:50%;cursor:pointer;
+    background:rgba(255,255,255,.85);color:#1d1d1f;font-size:20px;line-height:1;
+    display:flex;align-items:center;justify-content:center;
+    opacity:0;transition:opacity .3s, background .3s;
+  }
+  .slider:hover button.arrow{opacity:1;}
+  .slider button.arrow:hover{background:#fff;}
+  .slider .prev{left:12px;}
+  .slider .next{right:12px;}
+  .slider .dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);z-index:5;display:flex;gap:7px;}
+  .slider .dots button{
+    width:8px;height:8px;border:none;border-radius:50%;cursor:pointer;padding:0;
+    background:rgba(255,255,255,.45);transition:background .3s, transform .3s;
+  }
+  .slider .dots button.active{background:#fff;transform:scale(1.25);}
+  @media (hover:none){ .slider button.arrow{opacity:.85;} }
+
+  .seealso{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px 32px;margin-top:10px;}
+  .seealso h3{font-size:18px;margin-bottom:14px;}
+  .seealso ul{margin-left:20px;}
+  .seealso li{margin-bottom:8px;}
+  footer{text-align:center;color:var(--muted);font-size:14px;padding:40px 20px;border-top:1px solid var(--line);}
+  @media (max-width:600px){
+    section.version{padding:22px 20px;}
+    .lead{padding:22px 20px;font-size:17px;}
+    .slider .slide img{max-height:300px;}
+  }
+
+  /* ---------- ЛАЙТБОКС ---------- */
+  .slider .slide img{cursor:zoom-in;}
+  #lightbox{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
+            background:rgba(10,10,12,.93);padding:24px;}
+  #lightbox.open{display:flex;}
+  #lightbox figure{max-width:min(1200px,96vw);max-height:92vh;display:flex;flex-direction:column;
+                   gap:12px;align-items:center;}
+  #lightbox img{max-width:100%;max-height:80vh;border-radius:10px;background:#000;
+                box-shadow:0 24px 70px rgba(0,0,0,.65);}
+  #lightbox figcaption{color:#d6d6d8;font-size:14px;text-align:center;max-width:760px;}
+  #lightbox .hint{position:absolute;top:18px;right:24px;color:#a1a1a6;font-size:12px;
+                  letter-spacing:.12em;text-transform:uppercase;}
+  #lightbox .close{position:absolute;top:14px;left:18px;width:40px;height:40px;border:none;
+                   border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:22px;
+                   line-height:1;cursor:pointer;}
+  #lightbox .close:hover{background:rgba(255,255,255,.26);}
+
+  /* ---------- КНОПКА «НАВЕРХ» ---------- */
+  #toTop{position:fixed;right:22px;bottom:22px;z-index:150;width:46px;height:46px;border:none;
+         border-radius:50%;background:rgba(255,255,255,.92);color:#1d1d1f;font-size:18px;
+         cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.18);backdrop-filter:blur(10px);
+         opacity:0;pointer-events:none;transition:opacity .3s, transform .3s;}
+  #toTop.show{opacity:1;pointer-events:auto;}
+  #toTop:hover{transform:translateY(-2px);}
+
+  footer .credits{max-width:680px;margin:10px auto 0;font-size:12.5px;color:#8e8e93;line-height:1.5;}
+
+  @media print{ #toTop, #lightbox{display:none !important;} }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">История Apple · 1984–2024</div>
+  <h1>Версии macOS по годам: история ОС для Mac — от System&nbsp;1.0 до macOS&nbsp;Sequoia</h1>
+  <p class="sub">Весь тернистый путь становления операционной системы Apple: от классических System 1–Mac&nbsp;OS&nbsp;9 до современных macOS с Apple Intelligence — со скриншотами каждой эпохи.</p>
+  <div class="meta">11 августа 2024 · <a href="https://yablyk.com/author/nestanda/">Дмитрий Михневич</a> · по материалам <a href="https://yablyk.com">Yablyk.com</a></div>
+</header>
+
+<nav class="toc">
+  <ul>
+    <li><a href="#system1">System 1.0</a></li>
+    <li><a href="#system2">System 2–6</a></li>
+    <li><a href="#system7">System 7</a></li>
+    <li><a href="#system8">System 8</a></li>
+    <li><a href="#os9">Mac OS 9</a></li>
+    <li><a href="#cheetah">10.0 Cheetah</a></li>
+    <li><a href="#puma">10.1 Puma</a></li>
+    <li><a href="#jaguar">10.2 Jaguar</a></li>
+    <li><a href="#panther">10.3 Panther</a></li>
+    <li><a href="#tiger">10.4 Tiger</a></li>
+    <li><a href="#leopard">10.5 Leopard</a></li>
+    <li><a href="#snowleopard">10.6 Snow Leopard</a></li>
+    <li><a href="#lion">10.7 Lion</a></li>
+    <li><a href="#mountainlion">10.8 Mountain Lion</a></li>
+    <li><a href="#mavericks">10.9 Mavericks</a></li>
+    <li><a href="#yosemite">10.10 Yosemite</a></li>
+    <li><a href="#elcapitan">10.11 El Capitan</a></li>
+    <li><a href="#sierra">10.12 Sierra</a></li>
+    <li><a href="#highsierra">10.13 High Sierra</a></li>
+    <li><a href="#mojave">10.14 Mojave</a></li>
+    <li><a href="#catalina">10.15 Catalina</a></li>
+    <li><a href="#bigsur">11 Big Sur</a></li>
+    <li><a href="#monterey">12 Monterey</a></li>
+    <li><a href="#ventura">13 Ventura</a></li>
+    <li><a href="#sonoma">14 Sonoma</a></li>
+    <li><a href="#sequoia">15 Sequoia</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <div class="lead">
+    <strong>Mac OS X</strong> безусловно является программным совершенством и наглядным образцом того, как должна выглядеть лучшая в мире настольная операционная система. Но она далеко не всегда была такой. Впервые операционная система Mac OS была представлена в <strong>1984 году</strong> наряду с выпуском первого компьютера Macintosh — и оказалась в числе первых ОС с удобным графическим интерфейсом вместо командной строки. С 1984 по 2001 годы вышли версии System 1 – Mac OS 9 (классические), с 2000 года система получила имя Mac OS X, а с 2016 — macOS.
+  </div>
+
+  <section class="version" id="system1">
+    <h2>System 1.0 <span class="year">1984</span></h2>
+    <p>В версии System 1.0 Apple реализовала удобный графический интерфейс: понятное взаимодействие с элементами в оконном режиме было заложено уже в первой редакции. Более совершенные версии отличаются от «предка» лишь качеством графики и расширенным функционалом.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img class="light" src="shots/system1-1.png" alt="System 1.0 Finder" loading="lazy"><figcaption>System 1.0 — Finder 1.0, оригинальный Macintosh (1984)</figcaption></figure>
+        <figure class="slide"><img class="light" src="shots/system1-2.png" alt="Оригинальный Macintosh" loading="lazy"><figcaption>Оригинальный Macintosh 128K (1984)</figcaption></figure>
+        <figure class="slide"><img class="light" src="shots/system1-3.gif" alt="System 1 загрузка" loading="lazy"><figcaption>Загрузка System 1 на Macintosh</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="system2">
+    <h2>System 2.0 – 6.0 <span class="year">1985–1988</span></h2>
+    <p>В этот период появились дополнительные возможности, настройки и стандартные приложения, а также иерархическая файловая система. Особое внимание уделялось адаптации под новое железо: слоты расширения, периферия, новые процессоры и более ёмкие накопители. Полноценная многозадачность появилась только в версии System 5.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img class="light" src="shots/system6-1.jpg" alt="System 6.0.8 с MacPaint" loading="lazy"><figcaption>System 6.0.8 с приложением MacPaint</figcaption></figure>
+        <figure class="slide"><img class="light" src="shots/system6-2.png" alt="System 6 панель управления Map" loading="lazy"><figcaption>System 6 — панель управления «Map»</figcaption></figure>
+        <figure class="slide"><img class="light" src="shots/system6-3.jpg" alt="System 6 Finder 1988" loading="lazy"><figcaption>System 6 Finder (1988)</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="system7">
+    <h2>System 7.0 – 7.6 <span class="year">1991–1996</span></h2>
+    <p>Первое масштабное обновление ОС вышло лишь через семь лет: цветной интерфейс, значительно улучшенная многозадачность, поддержка новых компонентов и программ — как собственных, так и сторонних разработчиков.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img class="light" src="shots/system7-1.png" alt="Рабочий стол System 7" loading="lazy"><figcaption>Рабочий стол System 7 (1991)</figcaption></figure>
+        <figure class="slide"><img class="light" src="shots/system7-2.png" alt="System 7.0 панели управления" loading="lazy"><figcaption>System 7.0 — панели управления, Note Pad, Puzzle (1991)</figcaption></figure>
+        <figure class="slide"><img class="light" src="shots/system7-3.png" alt="System 7 Pro" loading="lazy"><figcaption>System 7 Pro 7.1.1 с PowerTalk (1993)</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="system8">
+    <h2>System 8 <span class="year">1997</span></h2>
+    <p>Выпущена летом 1997 года после возвращения Стива Джобса в Apple. В отличие от планировавшейся нумерации 7.7, Джобс выбрал новое имя. Apple прекратила лицензировать ОС сторонним производителям — с тех пор «яблочная» ОС устанавливается exclusively на устройства Apple. За первые две недели продано 1,2 млн копий, за полгода — ещё три миллиона. Из изменений: больше цвета в интерфейсе, новые темы оформления и панель управления.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img class="light" src="shots/system8-1.png" alt="Экран приветствия Mac OS 8" loading="lazy"><figcaption>Экран приветствия Mac OS 8 (1997)</figcaption></figure>
+        <figure class="slide"><img class="light" src="shots/system8-2.png" alt="Mac OS 8.1 Appearance" loading="lazy"><figcaption>Mac OS 8.1 — Appearance и обои рабочего стола (1998)</figcaption></figure>
+        <figure class="slide"><img class="light" src="shots/system8-3.jpg" alt="Desktop Strip" loading="lazy"><figcaption>Панель Desktop Strip в классической Mac OS</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="os9">
+    <h2>Mac OS 9 <span class="year">1999</span></h2>
+    <p>23 октября 1999 года вышла последняя версия классических Mac OS. Нововведения: шифрование данных по технологии Keychain, работа с удалёнными серверами, улучшенная поддержка USB. 5 декабря 2001 года вышло последнее обновление — Mac OS 9.2.2.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img class="light" src="shots/macos9-1.jpg" alt="Рабочий стол Mac OS 9" loading="lazy"><figcaption>Рабочий стол Mac OS 9 с ярлыками приложений</figcaption></figure>
+        <figure class="slide"><img class="light" src="shots/macos9-2.png" alt="Экран приветствия Mac OS 9" loading="lazy"><figcaption>Экран приветствия Mac OS 9 (1999)</figcaption></figure>
+        <figure class="slide"><img class="light" src="shots/macos9-3.png" alt="Mac OS 9.2.2" loading="lazy"><figcaption>Mac OS 9.2.2 — окно «Об этом компьютере» (2001)</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="cheetah">
+    <h2>Mac OS X 10.0 Cheetah <span class="year">2001</span> <span class="codename">публичная бета — 13 сентября 2000, $30</span></h2>
+    <p>24 марта 2001 года — релиз первой официальной версии OS X 10.0. Apple сделала кардинальный шаг: совершенно новый интерфейс Aqua, приложения TextEdit, Просмотр, Почта и QuickTime. Cheetah была очень требовательна к железу: 128 МБ ОЗУ и 800 МБ на диске (рекомендовано 1,5 ГБ) — в то время роскошь, стандартом было 64 МБ RAM.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/cheetah-1.png" alt="Cheetah About This Mac" loading="lazy"><figcaption>Mac OS X 10.0 Cheetah — окно «Об этом Mac»</figcaption></figure>
+        <figure class="slide"><img src="shots/cheetah-2.png" alt="Cheetah System Preferences" loading="lazy"><figcaption>System Preferences в Cheetah — хранитель экрана</figcaption></figure>
+        <figure class="slide"><img src="shots/cheetah-3.png" alt="Cheetah Apple menu" loading="lazy"><figcaption>Меню Apple в интерфейсе Aqua — Mac OS X 10.0</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="puma">
+    <h2>Mac OS X 10.1 Puma <span class="year">2001</span></h2>
+    <p>Второй крупный запуск — всего через полгода, 25 сентября 2001 года. Владельцы 10.0 обновлялись бесплатно, а OS X стала системой по умолчанию на всех новых Mac. Основной упор — на производительность: удобная запись CD/DVD, воспроизведение DVD, поддержка 200+ принтеров, OpenGL на 20% быстрее, AppleScript, ColorSync 4.0 и Image Capture. Несмотря на улучшения, Puma критиковали за недостаточную производительность и надёжность.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/puma-1.jpg" alt="Mac OS X 10.1 Puma" loading="lazy"><figcaption>Mac OS X 10.1 Puma (2001)</figcaption></figure>
+        <figure class="slide"><img src="shots/puma-2.jpg" alt="Aqua интерфейс public beta" loading="lazy"><figcaption>Интерфейс Aqua — первая публичная бета Mac OS X (2000)</figcaption></figure>
+        <figure class="slide"><img src="shots/puma-3.png" alt="Mac OS X 10.0 Aqua" loading="lazy"><figcaption>Ранний интерфейс Aqua — Mac OS X 10.0</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="jaguar">
+    <h2>Mac OS X 10.2 Jaguar <span class="year">2002</span></h2>
+    <p>Новые приложения iChat и Адресная книга, большой шаг в сторону доступности для людей с ограниченными возможностями. Стартовая заставка впервые показала логотип Apple в виде надкушенного яблока вместо «счастливого Mac».</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/jaguar-1.png" alt="Mac OS X 10.2 на PowerBook" loading="lazy"><figcaption>Mac OS X 10.2 Jaguar на PowerBook G4</figcaption></figure>
+        <figure class="slide"><img src="shots/jaguar-2.jpg" alt="Обои Jaguar Aqua" loading="lazy"><figcaption>Фирменные обои Aqua — эпоха Jaguar/Panther</figcaption></figure>
+        <figure class="slide"><img src="shots/jaguar-3.png" alt="Рабочий стол Panther-эры" loading="lazy"><figcaption>Рабочий стол эпохи Jaguar/Panther</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="panther">
+    <h2>Mac OS X 10.3 Panther <span class="year">2003</span></h2>
+    <p>Apple отказалась от Internet Explorer для Mac в пользу собственного браузера Safari, одновременно улучшив взаимодействие с Windows — вплоть до поддержки службы каталогов Active Directory. Главное нововведение — технология Exposé: мешающие окна можно убирать за пределы экрана.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/panther-1.jpg" alt="Mac OS X 10.3 Panther" loading="lazy"><figcaption>Mac OS X 10.3 Panther (2003)</figcaption></figure>
+        <figure class="slide"><img src="shots/panther-2.png" alt="Panther System Preferences" loading="lazy"><figcaption>Panther — System Preferences, загрузочный диск</figcaption></figure>
+        <figure class="slide"><img src="shots/panther-3.jpg" alt="Panther на PowerBook G4" loading="lazy"><figcaption>Mac OS X Panther на PowerBook G4</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="tiger">
+    <h2>Mac OS X 10.4 Tiger <span class="year">2005</span></h2>
+    <p>Появились фирменный поиск Spotlight и виджеты (календарь, калькулятор, часы и др.), поддержка процессоров Intel и приставки Apple TV.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/tiger-1.jpg" alt="Виджеты Tiger на рабочем столе" loading="lazy"><figcaption>Виджеты на рабочем столе — Mac OS X 10.4 Tiger (2005)</figcaption></figure>
+        <figure class="slide"><img src="shots/tiger-2.png" alt="Dashboard Tiger" loading="lazy"><figcaption>Dashboard с виджетами — Tiger</figcaption></figure>
+        <figure class="slide"><img src="shots/tiger-3.png" alt="Tiger System Preferences Dashboard" loading="lazy"><figcaption>Tiger — настройка Dashboard и Exposé</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="leopard">
+    <h2>Mac OS X 10.5 Leopard <span class="year">2007</span></h2>
+    <p>Между Tiger и Leopard прошёл самый долгий перерыв — Apple запускала первый iPhone. Leopard стала по-настоящему многозадачной и многопользовательской: поддержка 64-битных приложений, утилита резервного копирования Time Machine и Boot Camp для установки сторонних ОС.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/leopard-1.png" alt="Обои Aurora Leopard" loading="lazy"><figcaption>Фирменные обои Aurora — Mac OS X 10.5 Leopard (2007)</figcaption></figure>
+        <figure class="slide"><img src="shots/leopard-2.jpg" alt="Космические обои Leopard" loading="lazy"><figcaption>Космическая тема обоев Leopard</figcaption></figure>
+        <figure class="slide"><img src="shots/leopard-3.jpg" alt="Ремастер обоев Leopard" loading="lazy"><figcaption>Обои рабочего стола Leopard (ремастер)</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="snowleopard">
+    <h2>Mac OS X 10.6 Snow Leopard <span class="year">2009</span></h2>
+    <p>Главная задача — производительность и удобство. Полный отказ от архитектуры PowerPC: система работает только на Intel и стала полностью 64-разрядной. Цена: $129 для новых пользователей, $29 для владельцев Leopard, $9,95 — для купивших Mac с Leopard в период с 8 июня по 26 декабря 2009 года.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/snowleopard-1.jpg" alt="Обои Snow Leopard" loading="lazy"><figcaption>Обои Mac OS X 10.6 Snow Leopard (2009)</figcaption></figure>
+        <figure class="slide"><img src="shots/snowleopard-2.jpg" alt="Фиолетовые обои Snow Leopard" loading="lazy"><figcaption>Вариант обоев Snow Leopard</figcaption></figure>
+        <figure class="slide"><img src="shots/snowleopard-3.jpg" alt="Синие обои Snow Leopard" loading="lazy"><figcaption>Вариант обоев Snow Leopard</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="lion">
+    <h2>Mac OS X 10.7 Lion <span class="year">2011</span></h2>
+    <p>Более 250 новых функций; за первый день скачано свыше 1 млн копий. Дистрибуция — только через Mac App Store за $29,99: Lion стала первой ОС Apple, не распространявшейся на CD/DVD. Появились жесты многозадачности, Launchpad, функция «Возобновить», Lion Recovery и облачное хранилище iCloud.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/lion-1.png" alt="Launchpad Lion" loading="lazy"><figcaption>Launchpad — Mac OS X 10.7 Lion (2011)</figcaption></figure>
+        <figure class="slide"><img src="shots/lion-2.jpg" alt="Mac App Store в Lion" loading="lazy"><figcaption>Mac App Store — покупка Lion (2011)</figcaption></figure>
+        <figure class="slide"><img src="shots/lion-3.jpg" alt="Установка Lion из App Store" loading="lazy"><figcaption>Установка Mac OS X Lion из App Store</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="mountainlion">
+    <h2>Mac OS X 10.8 Mountain Lion <span class="year">2012</span></h2>
+    <p>Выпущена на год раньше плана — цикл разработки сократился с двух лет до одного. Настольная система перенимает возможности iOS: Центр уведомлений, Заметки, Напоминания, iMessage вместо iChat, тесная интеграция с iCloud — всего более 200 нововведений. Последняя ОС «кошачьего» семейства.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/mountainlion-1.png" alt="Рабочий стол Mountain Lion" loading="lazy"><figcaption>Рабочий стол Mac OS X 10.8 Mountain Lion (2012)</figcaption></figure>
+        <figure class="slide"><img src="shots/mountainlion-2.png" alt="Центр уведомлений Mountain Lion" loading="lazy"><figcaption>Центр уведомлений — Mountain Lion</figcaption></figure>
+        <figure class="slide"><img src="shots/mountainlion-3.png" alt="System Preferences Mountain Lion" loading="lazy"><figcaption>System Preferences — обои и хранитель экрана</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="mavericks">
+    <h2>Mac OS X 10.9 Mavericks <span class="year">2013</span></h2>
+    <p>Начало новой традиции названий — в честь памятных мест Калифорнии (Mavericks — популярный пляж). Apple впервые предложила бесплатное обновление, действующее и для всех последующих версий. Нововведения: поддержка нескольких мониторов, теги, Связка ключей iCloud, приложения Карты и iBooks.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/mavericks-1.jpg" alt="Рабочий стол Mavericks" loading="lazy"><figcaption>Рабочий стол Mac OS X 10.9 Mavericks (2013)</figcaption></figure>
+        <figure class="slide"><img src="shots/mavericks-2.jpg" alt="Вкладки Finder в Mavericks" loading="lazy"><figcaption>Вкладки Finder — новинка Mavericks</figcaption></figure>
+        <figure class="slide"><img src="shots/mavericks-3.jpg" alt="Функции Mavericks WWDC 2013" loading="lazy"><figcaption>Презентация новых функций Mavericks на WWDC 2013</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="yosemite">
+    <h2>Mac OS X 10.10 Yosemite <span class="year">2014</span></h2>
+    <p>Названа в честь Йосемитского национального парка. Кардинально новый плоский дизайн с эффектами прозрачности в духе iOS 7/8. Революционная функция Handoff: начав печатать в Pages на iOS, можно мгновенно продолжить на Mac; Continuity позволяет принимать звонки прямо с Mac.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/yosemite-1.jpg" alt="Обои Yosemite" loading="lazy"><figcaption>Обои Mac OS X 10.10 Yosemite (2014)</figcaption></figure>
+        <figure class="slide"><img src="shots/yosemite-2.jpg" alt="Широкоформатные обои Yosemite" loading="lazy"><figcaption>Обои Yosemite в высоком разрешении</figcaption></figure>
+        <figure class="slide"><img src="shots/yosemite-3.jpg" alt="Экран блокировки Yosemite" loading="lazy"><figcaption>Экран блокировки Yosemite</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="elcapitan">
+    <h2>Mac OS X 10.11 El Capitan <span class="year">2015</span></h2>
+    <p>Фокус на стабильности и производительности: крупных нововведений нет, зато много мелких улучшений. Модернизированы Safari, Spotlight, Почта и Заметки, упрощён функционал Дисковой утилиты.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/elcapitan-1.png" alt="Рабочий стол El Capitan" loading="lazy"><figcaption>OS X 10.11 El Capitan (2015)</figcaption></figure>
+        <figure class="slide"><img src="shots/elcapitan-2.png" alt="El Capitan на дисплее" loading="lazy"><figcaption>Рабочий стол El Capitan на внешнем дисплее</figcaption></figure>
+        <figure class="slide"><img src="shots/elcapitan-3.png" alt="Экран входа El Capitan" loading="lazy"><figcaption>Экран входа в систему — El Capitan</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="sierra">
+    <h2>macOS 10.12 Sierra <span class="year">2016</span></h2>
+    <p>Apple переименовала Mac OS X в macOS. Появились Siri, Apple Pay на Mac и разблокировка компьютера с помощью Apple Watch.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/sierra-1.jpg" alt="Обои по умолчанию macOS Sierra" loading="lazy"><figcaption>Обои по умолчанию macOS 10.12 Sierra (2016)</figcaption></figure>
+        <figure class="slide"><img src="shots/sierra-2.jpg" alt="Обои Sierra на MacBook Pro" loading="lazy"><figcaption>Обои Sierra на MacBook Pro</figcaption></figure>
+        <figure class="slide"><img src="shots/sierra-3.jpg" alt="Горы Сьерра-Невада" loading="lazy"><figcaption>Сьерра-Невада — вдохновение для названия и обоев</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="highsierra">
+    <h2>macOS 10.13 High Sierra <span class="year">2017</span></h2>
+    <p>Релиз 25 сентября 2017 года. Главные нововведения — новая файловая система APFS и технология Metal 2.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/highsierra-1.png" alt="Окно About в High Sierra" loading="lazy"><figcaption>macOS 10.13 High Sierra — окно «Об этом Mac»</figcaption></figure>
+        <figure class="slide"><img src="shots/highsierra-2.jpg" alt="Обои по умолчанию High Sierra" loading="lazy"><figcaption>Обои по умолчанию High Sierra (2017)</figcaption></figure>
+        <figure class="slide"><img src="shots/highsierra-3.jpg" alt="Горный хребет High Sierra" loading="lazy"><figcaption>Сьерра-Невада — горный хребет на обоях High Sierra</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="mojave">
+    <h2>macOS 10.14 Mojave <span class="year">2018</span></h2>
+    <p>Представлена 4 июня 2018 года на WWDC-2018. Крейг Федериги заявил, что Apple не будет объединять macOS и iOS. Появились портированные с iOS приложения (Акции, Новости, Дом, Диктофон), долгожданная Тёмная тема, обновлённый Mac App Store, групповые вызовы FaceTime и «Быстрые действия» в Finder.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/mojave-1.png" alt="Тёмная тема Mojave" loading="lazy"><figcaption>Тёмная тема — macOS 10.14 Mojave (2018)</figcaption></figure>
+        <figure class="slide"><img src="shots/mojave-2.jpg" alt="Finder в тёмной теме" loading="lazy"><figcaption>Finder в тёмном режиме — Mojave</figcaption></figure>
+        <figure class="slide"><img src="shots/mojave-3.jpg" alt="Динамические обои Mojave ночью" loading="lazy"><figcaption>Динамические обои Mojave ночью на iMac Pro</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="catalina">
+    <h2>macOS 10.15 Catalina <span class="year">2019</span></h2>
+    <p>Анонсирована 3 июня 2019 года на WWDC. Названа в честь острова Санта-Каталина. Основные нововведения:</p>
+    <ul>
+      <li>полный отказ от 32-битных приложений;</li>
+      <li>новые приложения Подкасты, Музыка и TV вместо iTunes;</li>
+      <li>приложение «Экранное время»;</li>
+      <li>функция Sidecar — iPad как второй дисплей для Mac;</li>
+      <li>объединение «Найти друзей» и «Найти iPhone» в приложение «Локатор».</li>
+    </ul>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/catalina-1.png" alt="Тёмный рабочий стол Catalina" loading="lazy"><figcaption>Тёмный рабочий стол — macOS 10.15 Catalina (2019)</figcaption></figure>
+        <figure class="slide"><img src="shots/catalina-2.png" alt="Настройки обоев Catalina" loading="lazy"><figcaption>System Preferences — обои и хранитель экрана Catalina</figcaption></figure>
+        <figure class="slide"><img src="shots/catalina-3.jpg" alt="Обои по умолчанию Catalina" loading="lazy"><figcaption>Обои по умолчанию macOS Catalina</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="bigsur">
+    <h2>macOS 11 Big Sur <span class="year">2020</span></h2>
+    <p>Анонсирована 22 июня 2020 года на WWDC 2020, выпущена 12 ноября 2020 года. Новый дизайн интерфейса и поддержка собственных ARM-процессоров Apple M1, улучшенная безопасность, переработанный Safari и поддержка приложений iOS/iPadOS на Mac.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/bigsur-1.png" alt="Рабочий стол Big Sur" loading="lazy"><figcaption>Рабочий стол macOS 11 Big Sur (2020)</figcaption></figure>
+        <figure class="slide"><img src="shots/bigsur-2.jpg" alt="Обои Big Sur для M1" loading="lazy"><figcaption>Цветные обои Big Sur для iMac M1</figcaption></figure>
+        <figure class="slide"><img src="shots/bigsur-3.jpg" alt="Динамические обои Big Sur" loading="lazy"><figcaption>Динамические обои Big Sur — смена времени суток</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="monterey">
+    <h2>macOS 12 Monterey <span class="year">2021</span></h2>
+    <p>Минимум глобальных изменений — обновлены FaceTime, Safari, Сообщения, Карты и Заметки. Главные новинки: «Универсальное управление» (общие клавиатура, мышь и трекпад для Mac и iPad) и долгожданная поддержка AirPlay на Mac.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/monterey-1.png" alt="Обои по умолчанию Monterey" loading="lazy"><figcaption>Обои по умолчанию — macOS 12 Monterey (2021)</figcaption></figure>
+        <figure class="slide"><img src="shots/monterey-2.png" alt="Обои Monterey" loading="lazy"><figcaption>Вариант обоев Monterey</figcaption></figure>
+        <figure class="slide"><img src="shots/monterey-3.jpg" alt="Тёмные обои Monterey" loading="lazy"><figcaption>Тёмная версия обоев Monterey</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="ventura">
+    <h2>macOS 13 Ventura <span class="year">2022</span></h2>
+    <p>Новый инструмент «Постановщик» (Stage Manager) для организации окон, полностью переработанные «Системные настройки» в стиле iPadOS, обновлённые Почта, Часы, Сообщения, Safari, Карты и FaceTime, новый дизайн Siri.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/ventura-1.png" alt="Настройки обоев Ventura" loading="lazy"><figcaption>«Системные настройки» — выбор обоев Ventura (2022)</figcaption></figure>
+        <figure class="slide"><img src="shots/ventura-2.jpg" alt="Обои Ventura" loading="lazy"><figcaption>Обои macOS 13 Ventura</figcaption></figure>
+        <figure class="slide"><img src="shots/ventura-3.jpg" alt="Тёмные обои Ventura" loading="lazy"><figcaption>Тёмная версия фирменных обоев Ventura</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="sonoma">
+    <h2>macOS 14 Sonoma <span class="year">2023</span></h2>
+    <p>Виджеты прямо на рабочем столе (в том числе виджеты iPhone), профили в Safari для разделения вкладок по задачам, эффекты жестами рук во время видеозвонков, улучшения в Сообщениях и Заметках.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/sonoma-1.png" alt="Обои Sonoma — залив Сан-Франциско" loading="lazy"><figcaption>Обои «Залив Сан-Франциско» — macOS 14 Sonoma (2023)</figcaption></figure>
+        <figure class="slide"><img src="shots/sonoma-2.png" alt="Рабочий стол Sonoma" loading="lazy"><figcaption>Рабочий стол macOS Sonoma с установщиком</figcaption></figure>
+        <figure class="slide"><img src="shots/sonoma-3.png" alt="Экран блокировки Sonoma" loading="lazy"><figcaption>Экран блокировки с анимированными обоями Sonoma</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <section class="version" id="sequoia">
+    <h2>macOS 15 Sequoia <span class="year">2024</span></h2>
+    <p>Новая веха: внедрение Apple Intelligence — искусственного интеллекта на базе технологии ChatGPT. «Умные» инструменты для написания текстов, генерации изображений и кратких пересказов, значительно улучшенная Siri с пониманием контекста. Также появились «Видеоповтор iPhone», отдельное приложение «Пароли» и новые возможности Заметок, Калькулятора, Safari и iMessage.</p>
+    <div class="slider">
+      <div class="track">
+        <figure class="slide"><img src="shots/sequoia-1.png" alt="Настройки обоев Sequoia" loading="lazy"><figcaption>«Системные настройки» — macOS 15 Sequoia (2024)</figcaption></figure>
+        <figure class="slide"><img src="shots/sequoia-2.jpg" alt="Видеоповтор iPhone в Sequoia" loading="lazy"><figcaption>«Видеоповтор iPhone» — новинка macOS Sequoia</figcaption></figure>
+        <figure class="slide"><img src="shots/sequoia-3.png" alt="Apple Intelligence в Sequoia" loading="lazy"><figcaption>Apple Intelligence — macOS 15 Sequoia</figcaption></figure>
+      </div>
+      <button class="arrow prev" aria-label="Назад">‹</button>
+      <button class="arrow next" aria-label="Вперёд">›</button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <div class="seealso">
+    <h3>🔥 Смотрите также</h3>
+    <ul>
+      <li><a href="https://yablyk.com/735168-kak-vyvesti-svoi-kontakty-na-displej-propavshego-mac/">Как вывести свои контакты на дисплей пропавшего Mac</a></li>
+      <li><a href="https://yablyk.com/787461-kak-prodlit-vremya-avtonomnoj-raboty-i-srok-sluzhby-akkumulyatorov-macbook/">Можно ли постоянно держать MacBook на зарядке, и как правильно заряжать ноутбуки Apple</a></li>
+      <li><a href="https://yablyk.com/238459-vozmozhnosti-klavishi-option-alt-v-mac-os-x-o-kotoryx-vy-mogli-ne-znat/">Возможности клавиши ⌥ Option (Alt) на Mac, о которых вы могли не знать</a></li>
+    </ul>
+  </div>
+
+</main>
+
+<footer>
+  Одностраничная версия статьи со скриншотами версий ОС · Источник: <a href="https://yablyk.com">Yablyk.com</a> · 11 августа 2024 · © 2011–2026
+<div class="credits">Скриншоты и обои: Wikimedia Commons, 512 Pixels, OSXDaily, Ars Technica, Apple Newsroom, VersionMuseum, PCMag, iMore, Cult of Mac, blog.alexseifert.com — в учебных целях.</div>
+</footer>
+
+<script>
+(function(){
+  var AUTOPLAY = 4500;
+  document.querySelectorAll('.slider').forEach(function(slider){
+    var track = slider.querySelector('.track');
+    var slides = track.children.length;
+    var dotsBox = slider.querySelector('.dots');
+    var index = 0, timer = null;
+
+    for (var i = 0; i < slides; i++){
+      var d = document.createElement('button');
+      d.setAttribute('aria-label', 'Слайд ' + (i+1));
+      (function(n){ d.addEventListener('click', function(){ go(n); restart(); }); })(i);
+      dotsBox.appendChild(d);
+    }
+    var dots = dotsBox.children;
+
+    function go(n){
+      index = (n + slides) % slides;
+      track.style.transform = 'translateX(-' + (index * 100) + '%)';
+      for (var j = 0; j < slides; j++) dots[j].classList.toggle('active', j === index);
+    }
+    function restart(){
+      if (timer) clearInterval(timer);
+      timer = setInterval(function(){ go(index + 1); }, AUTOPLAY);
+    }
+    slider.querySelector('.prev').addEventListener('click', function(){ go(index - 1); restart(); });
+    slider.querySelector('.next').addEventListener('click', function(){ go(index + 1); restart(); });
+    slider.addEventListener('mouseenter', function(){ if (timer) clearInterval(timer); });
+    slider.addEventListener('mouseleave', restart);
+    go(0); restart();
+  });
+})();
+</script>
+
+
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр скриншота">
+  <button class="close" aria-label="Закрыть">×</button>
+  <span class="hint">клик или Esc — закрыть</span>
+  <figure>
+    <img alt="">
+    <figcaption></figcaption>
+  </figure>
+</div>
+
+<button id="toTop" aria-label="Наверх" title="Наверх">↑</button>
+
+<script>
+/* Лайтбокс для скриншотов */
+(function(){
+  var box = document.getElementById('lightbox');
+  if (!box) return;
+  var big = box.querySelector('img');
+  var cap = box.querySelector('figcaption');
+
+  document.querySelectorAll('.slider .slide img').forEach(function(el){
+    el.addEventListener('click', function(){
+      big.src = el.currentSrc || el.src;
+      big.alt = el.alt || '';
+      cap.textContent = el.alt || '';
+      box.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function close(){
+    box.classList.remove('open');
+    big.removeAttribute('src');
+    document.body.style.overflow = '';
+  }
+  box.addEventListener('click', function(e){
+    if (e.target === box || e.target.classList.contains('close')) close();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') close();
+    if (!box.classList.contains('open')) return;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+      var all = Array.prototype.slice.call(document.querySelectorAll('.slider .slide img'));
+      var i = all.indexOf(document.querySelector('.slider .slide img[src="' + big.getAttribute('src') + '"]'));
+      if (i === -1) return;
+      var next = all[(i + (e.key === 'ArrowRight' ? 1 : all.length - 1)) % all.length];
+      big.src = next.currentSrc || next.src; big.alt = next.alt || ''; cap.textContent = next.alt || '';
+    }
+  });
+})();
+
+/* Кнопка «наверх» */
+(function(){
+  var btn = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    btn.classList.toggle('show', window.scrollY > 700);
+  }, {passive:true});
+  btn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+
+</body>
+</html>
